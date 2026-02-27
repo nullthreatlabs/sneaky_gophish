@@ -3,7 +3,7 @@ FROM node:latest AS build-js
 
 RUN npm install gulp gulp-cli -g
 
-RUN apt update && apt install git
+RUN apt update && apt install git -y
 WORKDIR /build
 RUN git clone https://github.com/gophish/gophish .
 RUN npm install --only=dev
